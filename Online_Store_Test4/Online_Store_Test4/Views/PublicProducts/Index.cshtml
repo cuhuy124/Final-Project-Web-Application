@@ -1,0 +1,101 @@
+﻿@model Online_Store_Test4.Database.Product
+
+@{
+    ViewBag.Title = Model.name;
+}
+
+<h2>Details</h2>
+
+<div>
+    <div>
+        <div class="image">
+            <img src="@Model.image_url" />
+        </div>
+
+        <div class="short-description">
+            @Model.name
+        </div>
+
+        <div class="short-description">
+            <img src="@Model.short_description" />
+        </div>
+
+        <div class="content">
+            @Html.Raw(@Model.detail)
+        </div>
+
+        <div class="form-control">
+            @Model.cost
+        </div>
+
+        <div class="glyphicon-time">
+            @Model.posted_time
+        </div>
+
+        <div class="short-description">
+            @Model.admin_name
+        </div>
+    </div>
+
+
+    @*<h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.short_description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.short_description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.detail)
+            </dt>
+
+            <dd>
+                @Html.Raw(Model.detail)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.image_url)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.image_url)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cost)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.posted_time)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.posted_time)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Admin.password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Admin.password)
+            </dd>
+
+        </dl>*@
+</div>

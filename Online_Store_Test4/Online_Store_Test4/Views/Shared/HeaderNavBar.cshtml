@@ -1,0 +1,33 @@
+﻿
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    @Html.ActionLink("Home Page", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+</div>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        @if (Session["UserID"] == null)
+        {
+            <li>@Html.ActionLink("Register", "Create", "Users")</li>
+            <li>@Html.ActionLink("Login", "Login", "Users")</li>
+            <li>@Html.ActionLink("Admin", "LoginForAdmin", "Admins")</li>
+        }
+        @if (Session["UserID"] != null)
+        {
+            <li>@Html.ActionLink("Logout", "Logout", "Users")</li>
+            <li>@Html.ActionLink("Admin", "LoginForAdmin", "Admins")</li>
+        }
+
+        @if (Session["AdminName"] != null)
+        {
+            <li>@Html.ActionLink("Product", "Index", "Products")</li>
+            <li>@Html.ActionLink("Category", "Index", "Categories")</li>
+            <li>@Html.ActionLink("Users", "Index", "Users")</li>
+            <li>@Html.ActionLink("Logout", "Logout", "Users")</li>
+        }
+        @Html.ActionLink("Cart List", "Index", "ShoppingCart", new { area = "top-left" }, new { @class = "navbar-brand" })
+    </ul>
+</div>

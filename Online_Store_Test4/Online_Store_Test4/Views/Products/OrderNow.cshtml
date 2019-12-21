@@ -1,0 +1,43 @@
+﻿@using Online_Store_Test4.Models;
+@{
+                /**/
+
+                ViewBag.Title = "OderNow";
+}
+
+<h2>OderNow</h2>
+<table border="1">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Total Cost
+        </th>
+    </tr>
+
+    @foreach (var cart in (List<Cart>)Session["Cart"])
+    {
+        <tr>
+            <td>
+                @cart.Product.name
+            </td>
+            <td>
+                @cart.Product.cost
+            </td>
+            <td>
+                @cart.Quantity
+            </td>
+            <td>
+                @(String.Format("{0:N0}", cart.Product.cost * cart.Quantity))
+            </td>
+        </tr>
+    }
+</table>
+

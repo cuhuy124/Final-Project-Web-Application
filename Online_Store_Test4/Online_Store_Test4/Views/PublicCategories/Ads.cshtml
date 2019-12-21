@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Online_Store_Test4.Database.Product>
+@using PagedList;
+@using PagedList.Mvc;
+@using Online_Store_Test4.Database;
+@using Online_Store_Test4.Models;
+
+<style>
+    .img {
+        position: relative;
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="col-lg-8 col-md-8">
+    <div class="row">
+        @{
+            foreach (var item in Model)
+            {
+
+        <div class="col-lg-5 col-md-5" style="height:200px;margin-top:100px">
+            <li class="img">
+                <a href='@Url.Action("Details", "PublicProducts", new { id = item.product_id})'>
+                    <img class="img img-responsive cimg" src='@Url.Content(item.image_url)' style=" height:100%;width:100% ;border-radius:24px 24px 24px 24px" />
+                    <h3>@Html.DisplayFor(modelItem => item.name)</h3>
+                </a>
+                Price: @Html.DisplayFor(modelItem => item.cost)
+                
+                    @Html.ActionLink("Order Now", "OrderNow", "ShoppingCart", new { id = item.product_id }, null) |
+           
+            </li>
+            
+        </div>
+               
+        
+            }
+        }
+    </div>
+</div>
+

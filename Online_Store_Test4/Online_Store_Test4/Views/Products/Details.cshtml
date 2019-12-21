@@ -1,0 +1,57 @@
+﻿@model Online_Store_Test4.Database.Product
+
+@{
+    ViewBag.Title = Model.name;
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Image
+        </dt>
+
+        <dd>
+            <img src="@Model.image_url" />
+        </dd>
+
+        <dt>
+            Product Name
+        </dt>
+
+        <dd>
+            @Model.name
+        </dd>
+
+        <dt>
+            Short Description
+        </dt>
+
+        <dd>
+            @Model.short_description
+        </dd>
+
+        <dt>
+            Detail Information
+        </dt>
+
+        <dd>
+            @Html.Raw(@Model.detail)
+        </dd>
+
+        <dt>
+            Price
+        </dt>
+
+        <dd>
+            @Model.cost VND
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.product_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
